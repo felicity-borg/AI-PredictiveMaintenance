@@ -59,18 +59,12 @@ The objective of Predictive Maintenance is to enable businesses to practice *pre
 
 # Data acquisition
 
-To enable modeling, data has to be ingested into the target analytic environment.
+Real-world run-to-failure datasets are virtually impossible to come across due to their commercially sensitive nature—of the several publicly available synthetic datasets, none ideally fit the canonical IoT scenario in which highly irregular real-time data streams from sensors are captured and used for condition monitoring or anomaly detection. To bypass this a Jupyter Notebook run on a Data Science Virtual Machine (DSVM) is used to generate data that simulates a hypothetical IoT-enabled manufacturing environment comprised of general rotational equipment, which may include turbines and engines. The data generator is capable of producing two datasets of the same format as shown in the diagram below:
 
-The solution provides two data acquisition options:
-
-1. Generation of static seed data
-2. Ingestion of IoT telemetry and enterprise data (maintenance logs)
-
-As shown in the diagram below, both options produce a data set of the same format. Option #1 is available as a "shortcut" for quickly (in a matter of minutes) generating an arbitrarily large input data set, whereas option #2 emulates a realistic production situation where incoming telemetry is staged over an extended period of time in storage blobs, and maintenance logs are accumulated in some other data store (exemplified as a SQL database in the diagram).
+* Static seed data for model training
+* Real-time telemetry data for performing end-to-end testing and validation of a complete AI-enabled IoT solution. This emulates a realistic production situation where incoming telemetry is staged over an extended period of time in storage blobs, and maintenance logs are accumulated in some other data store (exemplified as a SQL database in the diagram).
 
 ![](img/data_collection.png)
-
-The data generator included with the solution is capable of both generating static seed data (option #1) and emitting real-time telemetry (option #2).
 
 # Modeling
 
