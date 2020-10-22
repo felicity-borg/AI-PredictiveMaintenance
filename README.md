@@ -2,7 +2,7 @@
 
 The purpose of this template is to develop a complete Azure infrastructure capable of supporting Predictive Maintenance scenarios in the context of IoT remote monitoring. This repo provides reusable building blocks that can be customized to solve customers' Predictive Maintenance problems using Azure's cloud AI services.
 
-## Main features
+## Main Features
 
 * Sample [Jupyter notebooks](src/Notebooks) covering feature engineering, model training, evaluation and operationalization
 * Configurable and extensible [data generator](src/Notebooks/DataGeneration.ipynb) (supports static and streaming modes)
