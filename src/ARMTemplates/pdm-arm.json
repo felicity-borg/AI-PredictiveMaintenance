@@ -57,7 +57,7 @@
           }
     },
     "variables": {
-         "gitHubBaseUrl": "https://raw.githubusercontent.com/Azure/AI-PredictiveMaintenance/master/"   
+         "gitHubBaseUrl": "https://raw.githubusercontent.com/felicity-borg/AI-PredictiveMaintenance/master/"   
         },
     "resources": [
         {
