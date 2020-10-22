@@ -10,7 +10,7 @@ The purpose of this template is to develop a complete Azure infrastructure capab
 * Integration with Linux [Data Science Virtual Machine (DSVM)](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/)  and [Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/)
 * Compliance with [Team Data Science Process (TDSP)](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview)
 
-## Azure Resources used for the Solution
+## Required Azure Resources
 
 You will need an [Azure subscription](https://azure.microsoft.com/en-us/pricing/) to get started.
 
