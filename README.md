@@ -1,13 +1,12 @@
 # Predictive Maintenance with AI
 
-This template showcases a complete Azure infrastructure capable of supporting Predictive Maintenance scenarios in the context of IoT remote monitoring. This repo provides reusable and customizable building blocks to enable Azure customers to solve Predictive Maintenance problems using Azure's cloud AI services.
+The purpose of this template is to develop a complete Azure infrastructure capable of supporting Predictive Maintenance scenarios in the context of IoT remote monitoring. This repo provides reusable building blocks that can be customized to solve customers' Predictive Maintenance problems using Azure's cloud AI services.
 
 ## Main features
 
 * Sample [Jupyter notebooks](src/Notebooks) covering feature engineering, model training, evaluation and operationalization
 * Configurable and extensible [data generator](src/Notebooks/DataGeneration.ipynb) (supports static and streaming modes)
 * Technical documentation
-* Demo dashboard featuring IoT device management, live metrics, and prediction visualization
 * Integration with Linux [Data Science Virtual Machine (DSVM)](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/)  and [Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/)
 * Compliance with [Team Data Science Process (TDSP)](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview)
 
