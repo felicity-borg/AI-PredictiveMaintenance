@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "variables": {
         "uniqueString": "[uniqueString(resourceGroup().id)]",
-        "storageAccountName": "[concat('Peak-stMPTemplate', variables('uniqueString'))]",
+        "storageAccountName": "[concat('Peak-st-MPTemplate', variables('uniqueString'))]",
         "storageResourceId": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
         "storageVersion": "2017-06-01"
     },
