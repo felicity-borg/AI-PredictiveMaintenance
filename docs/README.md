@@ -1,14 +1,46 @@
 # Introduction
+## What is Predicitve Maintenance?
+Predictive Maintenance (**PdM**) is a popular application of predicitive analytics that can help businesses in several industries achieve high asset utilization and savings in operational costs. 
 
-Applying Artificial Intelligence to business problems has not been practical for most mainstream organizations. Recent developments in cloud computing such as inexpensive storage and scalable on-demand compute have changed that. The cloud has enabled an environment where Artificial Intelligence is accessible to nearly all organizations. It has made returns and the cost model compelling not only for high-value endeavors, but also for more common scenarios.
+## Predictive Maintenance for Businesses
 
-Still, many organizations struggle with where to start in AI. What scenarios are most accessible, appealing and, at the same time, impactful initial project candidates?
+Businesses require critical equipment to be running at peak efficiency and utilization to realize their return on capital investments. These assets could range from aircraft engines, turbines, elevators, or industrial chillers - that cost millions - down to everyday appliances like photocopiers, coffee machines, or water coolers. 
 
-Predictive Maintenance is emerging as one of the most demanded applications of predictive analytics for several reasons:
+* by default, most businesses rely on *corrective maintenance*, where parts are replaces a when they fail. Corrective maintenance ensures parts are used completely (therefore not wasting component life), but costs the business in downtime, labor, and unscheduled maintenance requirements (off hours, or inconvenient locations). 
+* At the next level, businesses practice *preventive maintenance,* where they determine the useful lifespan for a part, and maintain or replace it before a failure. Preventative Maintenance avoids unscheduled and catastrophic failures. But the high costs of scheduled downtime, under-utilization of the component during its lifetime, and labor still remain. 
+* The goal of *predicitve maintenance* is to optimize the balance between corrective and preventative maintainance, by enabling *just in time* replacement of components. This approach only replaces those components when they are close to failure. By extending components lifespans (compared to preventative maintenance) and reducing unscheduled maintenance and labor costs (over corrective maintenance), businesses can gain cost savings and competitive advantage. 
 
-* First, and most important, preventing the unexpected failure of critical assets, and extending their useful life, has unambiguous cost reduction benefits in both equipment and personnel. Those benefits directly translate to increased profitability.  Further, as these assets are often directly related to the organization's value chain, more reliable use normally results in better customer service and, therefore, brand benefits. In the short term, service outages may only increase the cost, but in the longer term, outages negatively impact an organization's reputation, making it costly to keep existing customers and add new ones.
-* Second, Predictive Maintenance has nearly universal applicability: almost every industry possesses highly capitalized assets, and the returns from their better utilization make it to the bottom line. The applicability in discrete manufacturing is obvious, but process manufacturing, energy, transportation, oil and gas, consumer goods, health care, and many other industries utilize long term assets that daily affect their competitiveness.
-* Third, compared to many other AI domains, the concepts, approaches and algorithms employed in Predictive Maintenance are more relatable and intuitive.  Detecting anomalies in equipment performance, predicting when failures may occur, identifying the cause of the failure, and estimating the remaining useful life are relatively clearly understood; answers can often be obtained using simple, mature and widely utilized regression or classification methods.
+## Why do businesses need PdM?
+Businesses face high operational risk due to unexpected failures and having limited insight into the root cause of problmes in complex systems. Some of the key business questions are:
+
+* Detect anomalies in equipment of system performance or functionality.
+* Predict whether an asset may fail in the near future.
+* Estimate the remaining useful life of an asset. 
+* Identify the main cause of failure of an asset. 
+* Identify what maintenance actions need to be done, and when by, on an asset. 
+
+### Typical goal statements from PdM are:
+
+* Reduce operational risk of mission critical equipment. 
+* Increase rate of return on assets by predicting failures before they occur. 
+* Control cost of maintenance by enabling just-in-time maintenance operations. 
+* Lower cutomer attrition, improve brand image, and lost sales. 
+* Lower inventory costs by reducing inventory levels by predicting the reorder point.
+* Enable just in time inventory by estimating order dates for replacement parts.
+* Discover patterns connected to various maintenance problems. 
+* Provide key performance indicators (KPIs) such as health scores for asset conditions. 
+* Estimate remaining lifespan of assets. 
+* Recommend timely maintenance activities. 
+
+
+## Qualifying problems for PdM
+
+It is important to emphasize that not all use cases or business problems can be effectively solved by PdM. There are three important qualifying criteria that need to be considered during problem selection:
+
+* The problem has to be predictive in nature—there should be a targe or a outcome to predict. The problem should also have a clear path of action to prevent failures when they are detected. 
+* The problm should have a record of the operational history of the equipment that contains *both good and bad outcomes*. The set of actions taken to mitigate bad outcomes should also be available as part of these records. Error reports, maintenance logs of performance degradation, repair, and replace logs are also important. 
+* The recorded history should be reflected in *relevant* data that is of *sufficient* enough quality to support the use case. For more information about data relevance and sufficiency, see [Data requirmements for predictive maintenance](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/predictive-maintenance-playbook#data-requirements-for-predictive-maintenance).
+* Finally, the business should have domain experts who have a clear understading of the 
 
 # Motivation behind this solution template
 
