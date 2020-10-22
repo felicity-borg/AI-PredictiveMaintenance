@@ -20,7 +20,7 @@
         "location": "[resourceGroup().location]",
         "resourceGroupName": "[resourceGroup().name]",
         "subscriptionId": "[subscription().subscriptionId]",
-        "iotHubName": "[toLower(concat('iothub-', uniqueString(resourceGroup().id)))]",
+        "iotHubName": "[toLower(concat('Peak-iot-MPTemplate', uniqueString(resourceGroup().id)))]",
         "storageAccountConnectionString": "[parameters('storageAccountConnectionString')]",
         "storageContainerName": "[parameters('storageContainerName')]"
     },
