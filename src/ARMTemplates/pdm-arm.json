@@ -60,18 +60,18 @@
          "gitHubBaseUrl": "https://raw.githubusercontent.com/felicity-borg/AI-PredictiveMaintenance/master/"   
         },
     "resources": [
-        {
-        "apiVersion": "2017-05-10",
-        "name": "generateResourceNamesTemplate",
-        "type": "Microsoft.Resources/deployments",
-        "properties": {
-        "mode": "incremental",
-        "templateLink": {
-            "uri":"[concat(variables('gitHubBaseUrl'),'src/ARMTemplates/resourceNames.json')]",
-            "contentVersion":"1.0.0.0"
-                }
-            }
-        },
+        // {
+        // "apiVersion": "2017-05-10",
+        // "name": "generateResourceNamesTemplate",
+        // "type": "Microsoft.Resources/deployments",
+        // "properties": {
+        // "mode": "incremental",
+        // "templateLink": {
+        //     "uri":"[concat(variables('gitHubBaseUrl'),'src/ARMTemplates/resourceNames.json')]",
+        //     "contentVersion":"1.0.0.0"
+        //         }
+        //     }
+        // },
         {
         "apiVersion": "2017-05-10",
         "name": "iotHubTemplate",
