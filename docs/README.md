@@ -49,7 +49,7 @@ If you would like develop a better undertanding of the processes involved in dev
 
 The intent behind this solution template is to showcase how to put together an end-to-end solution that demonstrates Azure ML modeling and a complete Azure infrastructure capable of supporting PdM scenarios. The components used in this template provide utility on their own and can be re-used and customized to solve other problems. 
 
-![](img/data_flow.png)
+![](img/dataFlow.png)
 
 # Scenario
 
@@ -70,7 +70,7 @@ Real-world run-to-failure datasets are virtually impossible to come across due t
 
 # Modeling
 
-Having acquired an input data set, one can proceed to the [modeling stage of TDSP](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/lifecycle-modeling).
+Having acquired an input data set, one can proceed to the modelling stage of the data science process.
 
 ![](img/modeling.png)
 
@@ -82,7 +82,7 @@ Modeling is an iterative process consisting of:
 
 After selecting the best model according to the evaluation criteria, a data pipeline with scoring can be deployed to a production or production-like environment for final customer acceptance.
 
-In this solution, modeling procedures are implemented as annotated Python 3 Jupyter Notebooks. To enable scenarios with arbitrarily large input data sets (and also facilitate code/infrastructure reuse when implementing featurization in production), feature engineering is performed using Spark.
+In this solution, modeling procedures are implemented as annotated Python 3 Jupyter Notebooks[](../src/ARMTemplates/). To enable scenarios with arbitrarily large input data sets (and also facilitate code/infrastructure reuse when implementing featurization in production), feature engineering is performed using Spark.
 
 The Notebooks can run on various compute targets; the ones currently supported out-of-the-box are:
 
