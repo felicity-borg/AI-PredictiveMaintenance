@@ -1,10 +1,8 @@
 # Objectives
 The purpose of this document is to provide guidance for you to configure each component of your Predictive Maintenance solution for handling production workloads.
 
-# Data collection
+# Data Collection
 ## Real time data ingress with IoT Hub
-The implementation details of real-time ingress are documented in the [data collection section of the solution design document](https://github.com/Azure/AI-PredictiveMaintenance/blob/master/docs/Solution-Design.md#i-data-collection).
-
 Azure IoT Hub offers several options based on [pricing](https://azure.microsoft.com/en-us/pricing/details/iot-hub/) and [scale](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling).  IoT Hub provides [basic and standard tiers](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling#basic-and-standard-tiers) which will impact the features available.  Both tiers provide the same [3 options for throughput scale](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling#message-throughput).
 
 Refer to the [IoT Solutions Remote Monitoring documentation](https://docs.microsoft.com/en-us/azure/iot-accelerators/iot-accelerators-remote-monitoring-explore) for details.  Attempting to solve a predictive maintenance problem is predicated on already having a comprehensive remote monitoring solution operationalized.
@@ -28,8 +26,6 @@ Refer to [the authoritative model management documentation](https://docs.microso
 * Running featurization in Streaming mode vs semi-batch mode (this needs to cover EventHub’s data retention policy)
 ### Monitoring the featurizer
 You will need to configure monitoring to detect infrastructure health and application health issues in your featurizer.  [Azure Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/) is the Microsoft Azure best practice for monitoring your application performance.  [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring/) is the Microsoft Azure best practice for monitoring your application infrastructure.
-
-If the featurizer crashes you will need to TODO.
 
 ### Cost
 Using Databricks as your featurizer will cost $0.20 per hour per DBU plus the cost of the VM(s) in the Spark cluster.  The documentation for [pricing details of Databricks node types](https://azure.microsoft.com/en-us/pricing/details/databricks/) and [Azure VM series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) explain the options available.
