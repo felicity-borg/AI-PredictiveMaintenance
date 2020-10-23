@@ -82,9 +82,9 @@ Modeling is an iterative process consisting of:
 
 After selecting the best model according to the evaluation criteria, a data pipeline with scoring can be deployed to a production or production-like environment for final customer acceptance.
 
-In this solution, modeling procedures are implemented as annotated Python 3 [Jupyter notebooks](src/Notebooks). Feature engineering is performed using Spark due to the large volume of data used and for the purpose of exploring and familiaring with Spark's capablities when implementing featurization in production. 
+In this solution, modeling procedures are implemented as annotated Python 3 [Jupyter notebooks](src/Notebooks). Feature engineering is performed using Spark due to the large volume of data used and for the purpose of exploring and familiarising with Spark's capabilities when implementing featurization in production. 
 
-The Notebooks used in this template are run on the compuet targets below:
+The Notebooks used in this template are run on the compute targets below:
 
 * Linux Data Science Virtual Machine (DSVM)
 * Azure Databricks (feature engineering only)
@@ -106,7 +106,7 @@ When using Azure Machine Learning (*Internal Preview* as of June 2018), it takes
 * Docker image creation
 * Deployment of the image to a compute target
 
-The end result is a real-time scoring Web service with a REST API interface.
+The result is a real-time scoring Web service with a REST API interface.
 
 For the purpose of this use case this template includes a pre-trained model, which is deployed to Azure Container Instances (ACI) and used as part of the pre-configured data pipeline to score all new feature data. In the future this default model will be replaced with a customised model more appropriate for the context. 
 
@@ -114,7 +114,7 @@ For the purpose of this use case this template includes a pre-trained model, whi
 
 This solution employs [Spark Structured Streaming](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html) to perform the featurization of IoT telemetry. The streaming job runs on Azure Databricks.
 
-Briefly, [Azure Event Hubs Connector for Apache Spark](https://github.com/Azure/azure-event-hubs-spark) allows making the *Event Hub-compatible endpoint* of the *IoT Hub* a streaming input source. The streaming job extracts features from the incoming telemetry which is further augmented with the 'historical' static data stored in a data store (e.g., Azure Table Storage). The feature engineering process that takes place in this instance exactly mimics the feature engineering process performed during modeling—the main difference is that here it happens in real time. Take notie of the feedback loop in the diagram below: its purpose is to augment new data with the results of previous aggregations, i.e., the historical data.
+Briefly, [Azure Event Hubs Connector for Apache Spark](https://github.com/Azure/azure-event-hubs-spark) allows making the *Event Hub-compatible endpoint* of the *IoT Hub* a streaming input source. The streaming job extracts features from the incoming telemetry which is further augmented with the 'historical' static data stored in a data store (e.g., Azure Table Storage). The feature engineering process that takes place in this instance exactly mimics the feature engineering process performed during modeling—the main difference is that here it happens in real time. Take note of the feedback loop in the diagram below: its purpose is to augment new data with the results of previous aggregations, i.e., the historical data.
 
 ![](img/productionalization_feature_engineering.png)
 
@@ -123,7 +123,7 @@ This solution's default telemetry ingestion components and output sinks can be r
 
 ### Can feature engineering be done using Azure Stream Analytics (ASA)?
 
- ASA may be a viable option in some relatively simple scenarios. It wasn't used in this soloution for several reasons:
+ ASA may be a viable option in some relatively simple scenarios. It wasn't used in this solution for several reasons:
  
  * This use case was partially carried out to explore Databricks and Spark's capabilities as well as using Databricks alongside a DSVM.
  * inability to write unit tests for ASA queries
@@ -138,6 +138,43 @@ New feature data, stored in an Azure Storage table by the featurization job, is 
 ![](img/productionalization_scoring.png)
 
 Note: the diagram shows the real-time machine learning Web service running on Azure Kubernetes Service (AKS)—in the default configuration, however, it is deployed to Azure Container Instances (ACI). While both options are acceptable, AKS is usually preferred in production, whereas ACI typically serves as a light-weight developing/testing option.
+
+
+# Using the Dashboard
+
+This dashboard contains 4 tabs:
+* Home - Summary documentation
+* Device simulation - A control dashboard for your data generators
+* Intelligence - Presentation of your device health
+* Modeling - The starting point to create your own custom model
+
+## Device simulation
+
+A summary view and detail view of the input devices, and control mechanisms to add and delete devices.  If the connection state of your devices is unexpectedly "disconnected", then check the configuration of your IoT Hub instance via the Azure Portal.  You may need to increase your number of IoT Hub units via the "Pricing and scale" blade.  Devices also become "disconnected" if they fail or are disabled by the user. You can review a chart tracking the device health and view the device logs by clicking on a device.
+
+## Intelligence
+
+A summary view and detail view of the device health predictions. The table provides links for you to more deeply inspect the prediction data, including the featurized (aggregated) raw input data.
+
+## Modeling
+
+The guidance to train and operationalize a model. Two options are provided: the Data Science Virtual Machine (DSVM), and Azure Databricks. The DSVM is optimized for data exploration, small scale feature engineering, and training.  Databricks is optimized for large scale feature engineering. This template uses Databricks for feature engineering, if you use Databricks for feature engineering you will still need to use the DSVM for training.
+
+When modeling on the DSVM, the notebook sequence is: 
+1) DataGeneration or DataIngestion
+2) FeatureEngineering
+3) Training
+4) Operationalization. 
+DataGeneration produces an arbitrarily large amount of synthetic seed data, whereas DataIngestion allows consuming the data collected from simulated IoT devices. While DataIngestion notebook demonstrates data ingress in a production-like scenario, it is generally not suitable for producing a sufficiently large training data set within a reasonable period. For that reason, most users would prefer the DataGeneration path.
+
+# Further reading
+
+* [Data Science Overview](Data-Science-Overview.md)
+* [Developer's Manual](Developer-Manual.md)
+* [Productionalization guide](Productionalization.md)
+* [Troubleshooting](Troubleshooting.md)
+* [Applicability and re-use of the architecture and components in different scenarios](Other-Scenarios.md)
+
 
 
 
