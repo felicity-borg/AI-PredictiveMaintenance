@@ -27,8 +27,6 @@ Refer to [the authoritative model management documentation](https://docs.microso
 ### Monitoring the featurizer
 You will need to configure monitoring to detect infrastructure health and application health issues in your featurizer.  [Azure Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/) is the Microsoft Azure best practice for monitoring your application performance.  [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring/) is the Microsoft Azure best practice for monitoring your application infrastructure.
 
-If the featurizer crashes you will need to TODO.
-
 ### Cost
 Using Databricks as your featurizer will cost $0.20 per hour per DBU plus the cost of the VM(s) in the Spark cluster.  The documentation for [pricing details of Databricks node types](https://azure.microsoft.com/en-us/pricing/details/databricks/) and [Azure VM series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) explain the options available.
 ## Real-time scoring
