@@ -1,6 +1,6 @@
 # Introduction
 ## What is Predictive Maintenance?
-Predictive Maintenance (**PdM**) is a popular application of predictive analytics that can help businesses in several industries achieve high asset utilization and savings in operational costs. 
+Predictive Maintenance (**PdM**) is a popular application of predictive analytics that can help businesses in several industries achieve high asset utilization and savings in operational costs. The possibility of performing predictive maintenance contributes to enhancing machine downtime, costs, control, and quality of production.
 
 ## Predictive Maintenance for Businesses
 
@@ -8,7 +8,7 @@ Businesses require critical equipment to be running at peak efficiency and utili
 
 * by default, most businesses rely on *corrective maintenance*, where parts are replaces a when they fail. Corrective maintenance ensures parts are used completely (therefore not wasting component life), but costs the business in downtime, labour, and unscheduled maintenance requirements (off hours, or inconvenient locations). 
 * At the next level, businesses practice *preventive maintenance, * where they determine the useful lifespan for a part, and maintain or replace it before a failure. Preventative Maintenance avoids unscheduled and catastrophic failures. But the high costs of scheduled downtime, under-utilization of the component during its lifetime, and labour remain. 
-* The goal of * predictive maintenance* is to optimize the balance between corrective and preventative maintenance, by enabling *just in time* replacement of components. This approach only replaces those components when they are close to failure. By extending components lifespans (compared to preventative maintenance) and reducing unscheduled maintenance and labour costs (over corrective maintenance), businesses can gain cost savings and competitive advantage. 
+* The goal of *predictive maintenance* is to optimize the balance between corrective and preventative maintenance, by enabling *just in time* replacement of components. This approach only replaces those components when they are close to failure. By extending components lifespans (compared to preventative maintenance) and reducing unscheduled maintenance and labour costs (over corrective maintenance), businesses can gain cost savings and competitive advantage. 
 
 ## Why do businesses need PdM?
 Businesses face high operational risk due to unexpected failures and having limited insight into the root cause of problems in complex systems. Some of the key business questions are:
@@ -169,6 +169,7 @@ DataGeneration produces an arbitrarily large amount of synthetic seed data, wher
 
 # Further reading
 
+* [Zonta, T., da Costa, C. A., da Rosa Righi, R., de Lima, M. J., da Trindade, E. S., & Li, G. P. (2020). Predictive maintenance in the Industry 4.0: A systematic literature review. Computers & Industrial Engineering, 106889.](https://www.sciencedirect.com/science/article/pii/S0360835220305787)
 * [Data Science Overview](Data-Science-Overview.md)
 * [Developer's Manual](Developer-Manual.md)
 * [Productionalization guide](Productionalization.md)
