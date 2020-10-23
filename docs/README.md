@@ -82,7 +82,8 @@ Modeling is an iterative process consisting of:
 
 After selecting the best model according to the evaluation criteria, a data pipeline with scoring can be deployed to a production or production-like environment for final customer acceptance.
 
-In this solution, modeling procedures are implemented as annotated Python 3 Jupyter Notebooks[](../src/ARMTemplates/). To enable scenarios with arbitrarily large input data sets (and also facilitate code/infrastructure reuse when implementing featurization in production), feature engineering is performed using Spark.
+In this solution, modeling procedures are implemented as annotated Python 3 [Jupyter notebooks](src/Notebooks). Feature engineering is performed using Spark for the purpose of exploring and familiaring with Spark's capablities when implementing featurization in production as well as for the 
+To enable scenarios with arbitrarily large input data sets (and also facilitate code/infrastructure reuse when implementing featurization in production), feature engineering is performed using Spark.
 
 The Notebooks can run on various compute targets; the ones currently supported out-of-the-box are:
 
