@@ -82,13 +82,65 @@ Modeling is an iterative process consisting of:
 
 After selecting the best model according to the evaluation criteria, a data pipeline with scoring can be deployed to a production or production-like environment for final customer acceptance.
 
-In this solution, modeling procedures are implemented as annotated Python 3 [Jupyter notebooks](src/Notebooks). Feature engineering is performed using Spark for the purpose of exploring and familiaring with Spark's capablities when implementing featurization in production as well as for the 
-To enable scenarios with arbitrarily large input data sets (and also facilitate code/infrastructure reuse when implementing featurization in production), feature engineering is performed using Spark.
+In this solution, modeling procedures are implemented as annotated Python 3 [Jupyter notebooks](src/Notebooks). Feature engineering is performed using Spark due to the large volume of data used and for the purpose of exploring and familiaring with Spark's capablities when implementing featurization in production. 
 
-The Notebooks can run on various compute targets; the ones currently supported out-of-the-box are:
+The Notebooks used in this template are run on the compuet targets below:
 
 * Linux Data Science Virtual Machine (DSVM)
 * Azure Databricks (feature engineering only)
+
+# Productionalization
+
+## Feature engineering
+
+Feature engineering is the first step prior to modeling the data. A feature is a predictive attribute for the model - such as temperature, pressure, vibration, and so on. For PdM, feature engineering involves abstracting a machine's health over historical data collected over a sizable duration. In that sense, it is different from its peers such as remote monitoring, anomaly detection, and failure detection.
+For this reason, designing and building a production data pipeline for a Predictive Maintenance solution can be a relatively non-trivial task.
+
+Generally, predictions can be made either in real time or on a batch basis. This solution was built to support real-time featurization and scoring, which means up-to-date predictions are generated as soon as new data is available.
+
+## Model operationalization
+
+When using Azure Machine Learning (*Internal Preview* as of June 2018), it takes the following steps to operationalize a model:
+
+* Registration
+* Docker image creation
+* Deployment of the image to a compute target
+
+The end result is a real-time scoring Web service with a REST API interface.
+
+For the purpose of this use case this template includes a pre-trained model, which is deployed to Azure Container Instances (ACI) and used as part of the pre-configured data pipeline to score all new feature data. In the future this default model will be replaced with a customised model more appropriate for the context. 
+
+## Telemetry ingestion and featurization
+
+This solution employs [Spark Structured Streaming](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html) to perform the featurization of IoT telemetry. The streaming job runs on Azure Databricks.
+
+Briefly, [Azure Event Hubs Connector for Apache Spark](https://github.com/Azure/azure-event-hubs-spark) allows making the *Event Hub-compatible endpoint* of the *IoT Hub* a streaming input source. The streaming job extracts features from the incoming telemetry which is further augmented with the 'historical' static data stored in a data store (e.g., Azure Table Storage). The feature engineering process that takes place in this instance exactly mimics the feature engineering process performed during modeling—the main difference is that here it happens in real time. Take notie of the feedback loop in the diagram below: its purpose is to augment new data with the results of previous aggregations, i.e., the historical data.
+
+![](img/productionalization_feature_engineering.png)
+
+This solution's default telemetry ingestion components and output sinks can be replaced with the alternatives shown in the diagram above. IoT Hub's Event Hub-compatible endpoint and a real Event Hub would act exactly the same in this scenario, so integrating with an Event Hub would not require any additional work. Introducing other alternatives such as an Azure SQL Database will require code changes.
+
+
+### Can feature engineering be done using Azure Stream Analytics (ASA)?
+
+ ASA may be a viable option in some relatively simple scenarios. It wasn't used in this soloution for several reasons:
+ 
+ * This use case was partially carried out to explore Databricks and Spark's capabilities as well as using Databricks alongside a DSVM.
+ * inability to write unit tests for ASA queries
+ * difficulties processing irregular streams of data
+ * difficulties accessing the historical data
+ * having access to code which implements feature engineering on Spark. This will need to be re-written from scratch for use on ASA.  (previously done on Spark) from scratch
+
+## Scoring, visualization and actions
+
+New feature data, stored in an Azure Storage table by the featurization job, is passed to the operationalized model to generate predictions. This process is orchestrated by a Web Job, which runs independently from the featurizer (this is done to promote better modularity and separation of concerns). Predictions are written to another Azure Storage table. The Dashboard, or a different visualization and reporting tool (e.g., Power BI), can access and render both the predictions and real-time aggregates which are computed by the featurizer.
+
+![](img/productionalization_scoring.png)
+
+Note: the diagram shows the real-time machine learning Web service running on Azure Kubernetes Service (AKS)—in the default configuration, however, it is deployed to Azure Container Instances (ACI). While both options are acceptable, AKS is usually preferred in production, whereas ACI typically serves as a light-weight developing/testing option.
+
+
+
 
 
 
