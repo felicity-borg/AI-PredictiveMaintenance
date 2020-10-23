@@ -21,8 +21,8 @@
 \node[action] (scoring) at (2, 1) {Scoring};
 \node[action] (visualization) at (0, 0) {Visualization\\and actions};
 
-\draw [<-, postaction={decorate,decoration={raise=0.5em, text along path,text align=center,text={|\scriptsize\it\sffamily|Snapshot}}}] (modeling.north) to [out=90,in=-180] (data.west);
-\draw [->, postaction={decorate,decoration={raise=0.5em, text along path,text align=center,text={|\scriptsize\it\sffamily|Stream}}}] (data.east) to [out=0,in=90] (featurization.north);
+\draw [<-, postaction={decorate,decoration={raise=0.5em, text along path,text align=center,text={|\scriptsize\it\sffamily|Static data}}}] (modeling.north) to [out=90,in=-180] (data.west);
+\draw [->, postaction={decorate,decoration={raise=0.5em, text along path,text align=center,text={|\scriptsize\it\sffamily|Simulated real-time telemetry}}}] (data.east) to [out=0,in=90] (featurization.north);
 
 \draw [->] (modeling) to (operationalization);
 \draw [->] (featurization) to (scoring);
