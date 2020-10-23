@@ -49,6 +49,8 @@ If you would like develop a better undertanding of the processes involved in dev
 
 The intent behind this solution template is to showcase how to put together an end-to-end solution that demonstrates Azure ML modeling and a complete Azure infrastructure capable of supporting PdM scenarios. The components used in this template provide utility on their own and can be re-used and customized to solve other problems. 
 
+![](img/data_flow.png)
+
 # Scenario
 
 The solution deals with a hypothetical IoT-enabled manufacturing environment comprised of generalized rotational equipment, which may include pumps, turbines, gearboxes, compressors, and engines.
