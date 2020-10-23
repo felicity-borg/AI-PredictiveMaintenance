@@ -60,18 +60,18 @@
          "gitHubBaseUrl": "https://raw.githubusercontent.com/felicity-borg/AI-PredictiveMaintenance/master/"   
         },
     "resources": [
-        // {
-        // "apiVersion": "2017-05-10",
-        // "name": "generateResourceNamesTemplate",
-        // "type": "Microsoft.Resources/deployments",
-        // "properties": {
-        // "mode": "incremental",
-        // "templateLink": {
-        //     "uri":"[concat(variables('gitHubBaseUrl'),'src/ARMTemplates/resourceNames.json')]",
-        //     "contentVersion":"1.0.0.0"
-        //         }
-        //     }
-        // },
+         {
+         "apiVersion": "2017-05-10",
+         "name": "generateResourceNamesTemplate",
+         "type": "Microsoft.Resources/deployments",
+         "properties": {
+         "mode": "incremental",
+         "templateLink": {
+             "uri":"[concat(variables('gitHubBaseUrl'),'src/ARMTemplates/resourceNames.json')]",
+             "contentVersion":"1.0.0.0"
+                 }
+             }
+         },
         {
         "apiVersion": "2017-05-10",
         "name": "iotHubTemplate",
@@ -108,42 +108,42 @@
                 }
             }
         },
-        // {
-        // "apiVersion": "2017-05-10",
-        // "name": "demoDashboardTemplate",
-        // "type": "Microsoft.Resources/deployments",
-        // "dependsOn": [
-        //     "deployMLWebServiceTemplate",
-        //     "storageAccountTemplate",
-        //     "iotHubTemplate",
-        //     "generateResourceNamesTemplate"
-        //   ],        
-        // "properties": {
-        // "mode": "incremental",
-        // "templateLink": {
-        //     "uri":"[concat(variables('gitHubBaseUrl'),'src/ARMTemplates/demoDashboard.json')]",
-        //     "contentVersion":"1.0.0.0"
-        //         },
-        // "parameters": {
-        //     "webSiteName": {"value": "[reference('generateResourceNamesTemplate').outputs.webSiteName.value]"},
-        //     "webAppUrl": {"value": "[concat(variables('gitHubBaseUrl'),'binaries//WebApp.zip')]"},
-        //     "amlAssetsUrl": {"value": "[concat(variables('gitHubBaseUrl'),'binaries//AML.zip')]"},
-        //     "iotHubName": {"value": "[reference('iotHubTemplate').outputs.iotHubName.value]"},
-        //     "iotHubOwnerKey": {"value": "[reference('iotHubTemplate').outputs.iotHubOwnerKey.value]"},
-        //     "iotHubDeviceKey": {"value": "[reference('iotHubTemplate').outputs.iotHubDeviceKey.value]"},
-        //     "storageAccountName": {"value": "[reference('storageAccountTemplate').outputs.storageAccountName.value]"},
-        //     "storageAccountKey": {"value": "[reference('storageAccountTemplate').outputs.storageAccountKey.value]"},
-        //     "dsvmName": {"value": "[reference('generateResourceNamesTemplate').outputs.vmName.value]"},
-        //     "databricksWorkspaceUrl": {"value": "[parameters('databricksWorkspaceUrl')]"},
-        //     "eventHubConnectionString": {"value": "[reference('iotHubTemplate').outputs.eventHubConnectionString.value]"},
-        //     "featurizerJarUrl": {"value": "[concat(variables('gitHubBaseUrl'),'binaries/featurizer_2.11-1.0.jar')]"},
-        //     "databricksToken": {"value": "[parameters('databricksToken')]"},
-        //     "scoreUrl": {"value": "[concat('http://', reference('deployMLWebServiceTemplate').outputs.azureContainerName.value, '.azurecontainer.io:5001/score')]"},
-        //     "databricksworkspaceLoginUrl": {"value": ""},
-        //     "notebooksUrl": {"value": "[concat(variables('gitHubBaseUrl'),'binaries/Notebooks.zip')]"}
-        //         }
-        //     }
-        // },
+         {
+         "apiVersion": "2017-05-10",
+         "name": "demoDashboardTemplate",
+         "type": "Microsoft.Resources/deployments",
+         "dependsOn": [
+             "deployMLWebServiceTemplate",
+             "storageAccountTemplate",
+             "iotHubTemplate",
+             "generateResourceNamesTemplate"
+           ],        
+         "properties": {
+         "mode": "incremental",
+         "templateLink": {
+             "uri":"[concat(variables('gitHubBaseUrl'),'src/ARMTemplates/demoDashboard.json')]",
+             "contentVersion":"1.0.0.0"
+                 },
+         "parameters": {
+             "webSiteName": {"value": "[reference('generateResourceNamesTemplate').outputs.webSiteName.value]"},
+             "webAppUrl": {"value": "[concat(variables('gitHubBaseUrl'),'binaries//WebApp.zip')]"},
+             "amlAssetsUrl": {"value": "[concat(variables('gitHubBaseUrl'),'binaries//AML.zip')]"},
+             "iotHubName": {"value": "[reference('iotHubTemplate').outputs.iotHubName.value]"},
+             "iotHubOwnerKey": {"value": "[reference('iotHubTemplate').outputs.iotHubOwnerKey.value]"},
+             "iotHubDeviceKey": {"value": "[reference('iotHubTemplate').outputs.iotHubDeviceKey.value]"},
+             "storageAccountName": {"value": "[reference('storageAccountTemplate').outputs.storageAccountName.value]"},
+             "storageAccountKey": {"value": "[reference('storageAccountTemplate').outputs.storageAccountKey.value]"},
+             "dsvmName": {"value": "[reference('generateResourceNamesTemplate').outputs.vmName.value]"},
+             "databricksWorkspaceUrl": {"value": "[parameters('databricksWorkspaceUrl')]"},
+             "eventHubConnectionString": {"value": "[reference('iotHubTemplate').outputs.eventHubConnectionString.value]"},
+             "featurizerJarUrl": {"value": "[concat(variables('gitHubBaseUrl'),'binaries/featurizer_2.11-1.0.jar')]"},
+             "databricksToken": {"value": "[parameters('databricksToken')]"},
+             "scoreUrl": {"value": "[concat('http://', reference('deployMLWebServiceTemplate').outputs.azureContainerName.value, '.azurecontainer.io:5001/score')]"},
+             "databricksworkspaceLoginUrl": {"value": ""},
+             "notebooksUrl": {"value": "[concat(variables('gitHubBaseUrl'),'binaries/Notebooks.zip')]"}
+                 }
+             }
+         },
         {
         "apiVersion": "2017-05-10",
         "name": "iotHubStorageRouteTemplate",
