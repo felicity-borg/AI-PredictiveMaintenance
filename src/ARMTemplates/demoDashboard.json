@@ -23,7 +23,7 @@
     "iotHubName": {
       "type": "string",
       "metadata": {
-          "description": "IOT Hub Name"
+          "description": "IOT Hub name"
       }
     },
     "iotHubOwnerKey": {
