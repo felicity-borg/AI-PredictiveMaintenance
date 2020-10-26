@@ -23,7 +23,7 @@ Deploying the solution will create a resource group in your subscription and pop
   * [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/)
   * [Azure Container Instances (ACI)](https://docs.microsoft.com/en-us/azure/container-instances/) application
   
-  For the purpose of this use case the resource group was created in West US 2 as there is an issue with deploying resources in Europe when using the DSVM.
+  For the purpose of this use case the resource group was created in West US 2 as there is an issue with deploying resources in Europe when using the DSVM, for more info see  [here](https://github.com/Azure/AI-PredictiveMaintenance/issues/150).
   The DSVM was used for this solution to generate the data; when customising this solution for a use case, a DSVM should not be required and resource groups can be created in     more feasible locations. 
 
 ## Learn More
