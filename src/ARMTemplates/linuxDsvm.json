@@ -49,7 +49,7 @@
         "OSDiskName": "osdiskforlinuxsimple",
         "DataDiskName": "datadiskforlinuxsimple",
         "sku": "linuxdsvmubuntu",
-        "vmName": "[toLower(concat('Peak-vm-ubuntu-MPTemplate', uniqueString(resourceGroup().id)))]",
+        "vmName": "[toLower(concat('Peak_vm_ubuntu_MPTemplate', uniqueString(resourceGroup().id)))]",
         "nicName": "[variables('vmName')]",
         "addressPrefix": "10.0.0.0/16",
         "subnetName": "Subnet",
