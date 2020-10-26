@@ -56,7 +56,7 @@
         "subnetPrefix": "10.0.0.0/24",
         "publicIPAddressType": "Dynamic",
         "publicIPAddressName": "[variables('vmName')]",
-        "vmStorageAccountContainerName": "PeakStVm",
+        "vmStorageAccountContainerName": "peakstvm",
         "vmSize": "[parameters('vmSize')]",
         "virtualNetworkName": "[variables('vmName')]",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
