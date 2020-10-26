@@ -5,7 +5,7 @@
         "uniqueString": "[uniqueString(resourceGroup().id)]",        
         "webSiteName": "[concat('pdm-demo-', variables('uniqueString'))]",
         "location": "[resourceGroup().location]",
-        "vmName": "[toLower(concat('Peak_vm_ubuntu_MPTemplate', uniqueString(resourceGroup().id), '.', variables('location'), '.cloudapp.azure.com'))]"
+        "vmName": "[toLower(concat('PeakVmUbuntuMPTemplate', uniqueString(resourceGroup().id), '.', variables('location'), '.cloudapp.azure.com'))]"
     },
     "resources": [],
     "outputs": {
