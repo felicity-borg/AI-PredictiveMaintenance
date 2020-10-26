@@ -6,7 +6,7 @@
     "variables": {        
         "namePrefix": "[resourceGroup().name]",
         "unique": "[uniqueString(resourceGroup().id)]",
-        "containerName": "[concat('Peak-aci-MPTemplate', variables('unique'))]",
+        "containerName": "[concat('peak-aci-mptemplate', variables('unique'))]",
         "location": "[resourceGroup().location]"
     },
     "resources": [
