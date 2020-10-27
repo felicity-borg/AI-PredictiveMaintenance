@@ -10,6 +10,42 @@ If you wish to customize this solution by cloning this GitHub repository, be sur
 
 The ARM templates can also be reused outside of GitHub, which would require deploying them in a certain order such that resource and input/output parameter dependencies are maintained.
 
+### Deploying your ARM Templates
+
+#### Get tools
+Let's start by making sure you have the tools you need to create and deploy templates. Install these tools on your local machine.
+
+**Editor**
+Templates are JSON files, although you can make changed by editing the templates on this repository, github was linked to a visual code to simplify making bigger chnaged and to make tracking chnages easier.
+
+**Command-line deployment**
+You also need either Azure PowerShell or Azure CLI to deploy the template. If you use Azure CLI, you must have the latest version. For the installation instructions, see:
+
+[Install Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)
+[Install Azure CLI on Windows](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows)
+[Install Azure CLI on Linux](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux)
+[Install Azure CLI on macOS](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos)
+
+Azure PowerShell was used to deploy templates for this use case. 
+
+After installing either Azure PowerShell or Azure CLI, make sure you sign in for the first time. For help, see [Sign in - PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps#sign-in)or [Sign in - Azure CLI](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli#sign-in).
+
+## Sign in to Azure
+To start working with Azure PowerShell/Azure CLI, sign in with your Azure credentials.
+![](img/sign-in-powerShell.PNG)
+![](img/sign-in-AZ.PNG)
+
+# #Create resource group
+When you deploy a template, you specify a resource group that will contain the resources. Before running the deployment command, create the resource group with either Azure CLI, Azure PowerShell as shown in the images below, or using (Azure Portal)[https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal]. 
+![](img/RG-powerShell.PNG)
+![](img/RG-AZ.PNG)
+
+## Deploy ARM templates
+
+To deploy the templates via the main template **pdm-arm.json**, use either Azure CLI or Azure PowerShell. Give a name to the deployment so you can easily identify it in the deployment history. Use the resource group you created via the commands shown above or using the (Azure Portal)[https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal] and paste the URI to the location of your **pdm-arm.json**. This needs to be copied from the *raw* view of the template. 
+
+![](Deploying.PNG)
+
 ### Additional provisioning activities
 
 In addition to the ARM deployments, the solution depends on the following custom configuration activities implemented as WebJobs:
