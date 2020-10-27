@@ -35,7 +35,7 @@ To start working with Azure PowerShell/Azure CLI, sign in with your Azure creden
 ![](img/sign-in-powerShell.PNG)
 ![](img/sign-in-AZ.PNG)
 
-# #Create resource group
+## Create resource group
 When you deploy a template, you specify a resource group that will contain the resources. Before running the deployment command, create the resource group with either Azure CLI, Azure PowerShell as shown in the images below, or using (Azure Portal)[https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal]. 
 ![](img/RG-powerShell.PNG)
 ![](img/RG-AZ.PNG)
