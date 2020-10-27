@@ -45,6 +45,7 @@ When you deploy a template, you specify a resource group that will contain the r
 To deploy the templates via the main template **pdm-arm.json**, use either Azure CLI or Azure PowerShell. Give a name to the deployment so you can easily identify it in the deployment history. Use the resource group you created via the commands shown above or using the (Azure Portal)[https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal] and paste the URI to the location of your **pdm-arm.json**. This needs to be copied from the *raw* view of the template. 
 
 ![](Deploying.PNG)
+![](raw-URI.PNG)
 
 ### Additional provisioning activities
 
